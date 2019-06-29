@@ -52,15 +52,13 @@
 				    <div v-if="task.status !== 'completed'">
 				    	
 				    	<v-btn
-				      	  	:loading="loading"
-				      	  	:disabled="!valid || loading"
+				      	  	:disabled="!valid"
 				      	  	color="success"
 				      	  	@click="updateTask">
 				      	  	Update
 				      	</v-btn>
 				      	<v-btn
-				      	  	:loading="loading"
-				      	  	:disabled="!valid || loading"
+				      	  	:disabled="!valid"
 				      	  	color="success"
 				      	  	@click="completeTask">
 				      	  	Complete
@@ -92,9 +90,6 @@
 		computed: {
 			task() {
 				return this.$store.getters.taskById(+this.$route.params.id)
-			},
-			loading () {
-				return this.$store.getters.loading
 			}
 		},
 		methods: {

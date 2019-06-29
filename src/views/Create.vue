@@ -59,8 +59,7 @@
 
 			    <v-spacer></v-spacer>
 		      	<v-btn
-		      	  	:loading="loading"
-		      	  	:disabled="!valid || loading"
+		      	  	:disabled="!valid"
 		      	  	color="success"
 		      	  	@click="createTask">
 		      	  	Create task
@@ -87,11 +86,6 @@
 				chips: null,
 				date: new Date().toISOString().substr(0, 10),
 			    menu: false,
-			}
-		},
-		computed: {
-			loading () {
-				return this.$store.getters.loading
 			}
 		},
 		methods: {
